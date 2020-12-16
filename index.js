@@ -19,8 +19,7 @@ app.use(bodyParser.json())
 
 // 跨域設定
 app.use(cors({
-  origin(origin, callback) {
-    console.log(origin);
+  origin (origin, callback) {
     // 如果是 postman 之類的後端，允許
     if (origin === undefined) {
       callback(null, true)
