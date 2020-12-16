@@ -14,7 +14,6 @@ import Photoswipe from 'vue-pswipe'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueGtag from 'vue-gtag'
-import VueAnalytics from 'vue-analytics'
 
 axios.defaults.withCredentials = true
 Vue.config.productionTip = false
