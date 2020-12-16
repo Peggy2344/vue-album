@@ -11,7 +11,7 @@ import routeAlbum from './routes/albums.js'
 
 dotenv.config()
 
-mongoose.connect(process.env.DBURL, { useNewUrlParser: true }, { useUnifiedTopology: true })
+mongoose.connect(process.env.DBURL, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
 
 const app = express()
 
@@ -20,6 +20,7 @@ app.use(bodyParser.json())
 // 跨域設定
 app.use(cors({
   origin(origin, callback) {
+    console.log(origin);
     // 如果是 postman 之類的後端，允許
     if (origin === undefined) {
       callback(null, true)
