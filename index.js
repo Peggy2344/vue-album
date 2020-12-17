@@ -78,4 +78,7 @@ app.listen(process.env.PORT, () => {
   console.log('server started')
 })
 
+process.on('uncaughtException', function (err) {
+  console.log('ERROR is ' + err)
+})
 // console.log(process.env.DEV.trim() === 'true')

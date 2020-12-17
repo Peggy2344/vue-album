@@ -192,7 +192,8 @@ export const file = async (req, res) => {
     // heroku情況下
     axios({
       method: 'GET',
-      url: 'http://' + process.env.FTP_HOST + '/' + process.env.FTP_USER + '/' + req.params.file
+      url: 'http://' + process.env.FTP_HOST + '/' + process.env.FTP_USER + '/' + req.params.file,
+      responseType: 'stream'
     }).then(response => {
       response.data.pipe(res)
     }).catch((error) => {
